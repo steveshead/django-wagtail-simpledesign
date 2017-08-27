@@ -6,10 +6,36 @@
 
 {% block content %}
 <div class="row">
-  <div class="col-md-10 col-md-offset-1 main-pages">
+  <div class="col-md-10 col-md-offset-1">
 
-    {{ page.body|richtext }}
+    <div class="col-md-12 mp-headings text-center blocks">
+      <h1>Inspired by <span>Genius</span> - Driven by <span>Passion</span></h1>
+      <h3>This is the way of the world of <span>Steve Shead</span></h3>
+      <p>"<em>...doing the right thing, the right way with inclusion and vision...</em>"</p>
+    </div>
+
+    <div class="col-md-12 blocks template">
+      <h2 class="text-center"><span><i class="fa fa-home"> </i> </span>Home <span>Page</span></h2>
+    </div>
 
   </div>
 </div>
+
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1 blocks home-page-posts">
+            <h1 class="text-center">Latest News</h1>
+            {% for blog in page.blogs %}
+            <div class="col-md-4">
+            <a class="blog-post-link" href="{% pageurl blog %}">
+                <h3>{{ blog.title }}</h3>
+            </a>
+            <div class="blog-intro">
+                {{ blog.body|richtext|truncatewords_html:20 }}
+                <a class="btn btn-primary" href="{% pageurl blog %}">Read More &raquo;</a>
+            </div>
+          </div>
+            {% endfor %}
+          </div>
+        </div>
+
 {% endblock %}

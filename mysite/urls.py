@@ -3,6 +3,8 @@ from __future__ import absolute_import, unicode_literals
 from django.conf import settings
 from django.conf.urls import include, url
 from django.contrib import admin
+import contact.urls
+from . import views
 
 from wagtail.wagtailadmin import urls as wagtailadmin_urls
 from wagtail.wagtailcore import urls as wagtail_urls
@@ -17,12 +19,15 @@ urlpatterns = [
     url(r'^documents/', include(wagtaildocs_urls)),
 
     url(r'^search/$', search_views.search, name='search'),
+    url(r'^template/$', views.TemplatePage.as_view(), name='template'),
+    url(r'^services/$', views.ServicesPage.as_view(), name='services'),
 
     # Alternatively, if you want Wagtail pages to be served from a subpath
     # of your site, rather than the site root:
     #    url(r'^pages/', include(wagtail_urls)),
     url(r'^blog/', include('blog.urls', namespace="blog")),
     url(r'^comments/', include('django_comments_xtd.urls')),
+    url(r'^', include(contact.urls, namespace='contact')),
 
     # For anything not caught by a more specific rule above, hand over to
     # Wagtail's page serving mechanism. This should be the last pattern in

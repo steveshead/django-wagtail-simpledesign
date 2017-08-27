@@ -6,10 +6,10 @@
   <div class="col-md-7" style="margin-right:-40px;margin-left:10px;">
 
     {% if category %}
-    <h2>{{ category }}</h2>
+    <h2 class="tagsandcategories">Category = {{ category }}</h2>
     {% endif %}
     {% if tag %}
-    <h2>Posts tagged with '{{ tag }}'</h2>
+    <h2 class="tagsandcategories">Posts tagged with '{{ tag }}'</h2>
     {% endif %}
 
     {% for rl in self.related_links.all %}
@@ -41,6 +41,7 @@
   </div>
   <div class="col-md-4 col-md-push-1 blog-sidebar">
     <h2 class="text-center">Placeholder Text</h2>
+
   </div>
 </div>
 {% endblock %}

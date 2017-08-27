@@ -14,6 +14,7 @@
             {# Link to home page #}
             <a href="{% pageurl site_root %}" class="navbar-brand" title="{{ site_root.title }}" data-placement="bottom">
                 <div class="navbar-brand">SIMPLE<span>DESIGN</span></div>
+                <a class="home-link" href="{% pageurl site_root %}">HOME</a>
             </a>
         </div>
         <div class="navbar-collapse collapse">
@@ -30,6 +31,10 @@
                 {% endfor %}
             </ul>
             <form class="navbar-form navbar-right" role="search" action="{% url 'search' %}" method="get">
+              <ul class="dropdown-menu" role="menu">
+                    <li><a href="{% url 'accounts:login' %}">Profile</a></li>
+                    <li><a href="{% url 'accounts:logout' %}">Logout</a></li>
+                  </ul>
               <div class="social-networks">
                 <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
                 <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>

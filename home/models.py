@@ -6,10 +6,11 @@ from wagtail.wagtailcore.models import Page
 from wagtail.wagtailcore.fields import RichTextField
 from wagtail.wagtailadmin.edit_handlers import FieldPanel
 
+from blog.models import BlogPage
+
 
 class HomePage(Page):
-    body = RichTextField(blank=True)
-
-    content_panels = Page.content_panels + [
-        FieldPanel('body', classname="full"),
-    ]
+    def blogs(self):
+        blogs = BlogPage.objects.all()
+        blogs = blogs.order_by('-date')[:3]
+        return blogs
