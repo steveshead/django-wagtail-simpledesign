@@ -2,14 +2,20 @@
 {% load wagtailcore_tags static %}
 
 {% block content %}
+<div class="col-md-12 mp-headings text-center blocks">
+<h1>Inspired by <span>Genius</span> - Driven by <span>Passion</span></h1>
+<h3>This is the way of the world of <span>Steve Shead</span></h3>
+<p>"<em>...doing the right thing, the right way with inclusion and vision...</em>"</p>
+</div>
+
 <div class="row">
-  <div class="col-md-7" style="margin-right:-40px;margin-left:10px;">
+  <div class="col-md-8" style="margin-right:-100px;margin-left:0;">
 
     {% if category %}
-    <h2 class="tagsandcategories">Category = {{ category }}</h2>
+    <h2 class="tagsandcategories">Posts with Category: <span>{{ category }}</span></h2>
     {% endif %}
     {% if tag %}
-    <h2 class="tagsandcategories">Posts tagged with '{{ tag }}'</h2>
+    <h2 class="tagsandcategories">Posts with tag: <span>{{ tag }}</span></h2>
     {% endif %}
 
     {% for rl in self.related_links.all %}
@@ -39,8 +45,51 @@
     {% endif %}
 
   </div>
-  <div class="col-md-4 col-md-push-1 blog-sidebar">
-    <h2 class="text-center">Placeholder Text</h2>
+  <div class="col-md-4 col-md-push-1 ">
+
+    <div class="col-md-12 text-center blocks">
+      <h2 class="text-center">Subscribe Now</h2>
+      <p class="text-justify mb-25">Subscribe to our company newsletter and be the first to get the latest and greatest news as it happens.</p>
+      <a class="btn btn-lg btn-primary" href="/subscribe/">SUBSCRIBE</a>
+  </div>
+
+  <div class="col-md-12 blocks text-center">
+    <h2 class="mb-25">About Us</h2>
+    <img class="mb-25" style="border:10px solid #f5f5f5;box-shadow: 0 0 1px #999;" src="http://placehold.it/175x175" />
+    <p class="text-justify">Cras dapibus. Etiam iaculis nunc ac metus. Suspendisse pulvinar, augue ac venenatis condimentum, sem libero volutpat nibh, nec pellentesque velit pede quis nunc. Praesent nec nisl a purus blandit viverra. Fusce egestas elit eget lorem. Nullam tincidunt adipiscing enim.</p>
+  </div>
+
+  <div class="col-md-12 blocks">
+    <h2 class="mb-25 text-center">Social media</h2>
+    <ul class="social-network social-circle">
+        <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
+        <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+        <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+    </ul>
+  </div>
+
+  <div class="col-md-12 blocks gallery">
+    <h2 class="mb-25 text-center">Gallery</h2>
+    <div class="row mb-25">
+      <div class="col-md-6">
+        <img class="img-responsive" src="http://placehold.it/200x200" />
+      </div>
+      <div class="col-md-6">
+        <img class="img-responsive" src="http://placehold.it/200x200" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <img class="img-responsive" src="http://placehold.it/200x200" />
+      </div>
+      <div class="col-md-6">
+        <img class="img-responsive" src="http://placehold.it/200x200" />
+      </div>
+    </div>
+
+  </div>
 
   </div>
 </div>

@@ -19,16 +19,18 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                {% for menuitem in menuitems %}
-                    <li class="{% if menuitem.show_dropdown %}dropdown{% endif %}{% if menuitem.active %} active{% endif %}">
-                        {% if menuitem.show_dropdown %}
-                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">{{ menuitem.title }} <b class="caret"></b></a>
-                            {% top_menu_children parent=menuitem %}
-                        {% else %}
-                            <a href="{% pageurl menuitem %}">{{ menuitem.title }}</a>
-                        {% endif %}
-                    </li>
-                {% endfor %}
+              <li class="{% if request.path == '/blog/' %}active{% endif %}">
+                <a href="/blog">News</a>
+              </li>
+              <li class="{% if request.path == '/services/' %}active{% endif %}">
+                <a href="/services">Services</a>
+              </li>
+              <li class="{% if request.path == '/template/' %}active{% endif %}">
+                <a href="/template">Template</a>
+              </li>
+              <li class="{% if request.path == '/contact/' %}active{% endif %}">
+                <a href="/contact">Contact</a>
+              </li>
             </ul>
             <form class="navbar-form navbar-right" role="search" action="{% url 'search' %}" method="get">
               <div class="social-networks">

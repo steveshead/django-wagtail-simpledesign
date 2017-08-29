@@ -2,7 +2,7 @@
 
 {% load wagtailcore_tags %}
 
-{% block body_class %}template-homepage{% endblock %}
+{% block body_class %}homepage{% endblock %}
 
 {% block content %}
 <div class="row">
@@ -21,21 +21,77 @@
   </div>
 </div>
 
-        <div class="row">
-          <div class="col-md-10 col-md-offset-1 blocks home-page-posts">
-            <h1 class="text-center">Latest News</h1>
-            {% for blog in page.blogs %}
-            <div class="col-md-4">
-            <a class="blog-post-link" href="{% pageurl blog %}">
-                <h3>{{ blog.title }}</h3>
-            </a>
-            <div class="blog-intro">
-                {{ blog.body|richtext|truncatewords_html:20 }}
-                <a class="btn btn-primary" href="{% pageurl blog %}">Read More &raquo;</a>
-            </div>
-          </div>
-            {% endfor %}
-          </div>
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1 blocks">
+        <div class="title col-xs-12">
+            <h1 class="text-center mb-25">Creative <span>Devices</span></h1>
         </div>
+    <div class="row">
+      <div class="col-md-3">
+        <img class="img-responsive" src="http://placehold.it/200x200">
+      </div>
 
+      <div class="col-md-8 col-md-offset-1">
+        <h2>iCreate Innovation</h2>
+            <p>Donec orci lectus, aliquam ut, faucibus non euismod id nulla. Curabitur turpis etiam iaculis nunc ac metus. Nulla neque dolor sagittis eget iaculis quis. Molestie non velit quisque ut nisi. Aenean viverra rhoncus pede. Aenean viverra rhoncus pede nunc nec neque.</p>
+            <button type="button" class="btn btn-primary">More Info</button>
+      </div>
+    </div>
+    <hr />
+    <div class="row">
+
+      <div class="col-md-8 text-right">
+        <h2>iCreate Visuals</h2>
+            <p>Donec orci lectus, aliquam ut, faucibus non euismod id nulla. Curabitur turpis etiam iaculis nunc ac metus. Nulla neque dolor sagittis eget iaculis quis. Molestie non velit quisque ut nisi. Aenean viverra rhoncus pede. Aenean viverra rhoncus pede nunc nec neque.</p>
+            <button type="button" class="btn btn-primary">More Info</button>
+      </div>
+      <div class="col-md-3 col-md-offset-1">
+        <img class="img-responsive" src="http://placehold.it/200x200">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 blocks home-page-posts">
+      <h1 class="text-center">Latest News</h1>
+      {% for blog in page.blogs %}
+      <div class="col-md-4">
+      <a class="blog-post-link" href="{% pageurl blog %}">
+          <h3>{{ blog.title }}</h3>
+      </a>
+      <div class="blog-intro">
+          {{ blog.body|richtext|truncatewords_html:20 }}
+          <a class="btn btn-primary" href="{% pageurl blog %}">Read More &raquo;</a>
+      </div>
+    </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 blocks home-page-posts temp">
+      <div class="col-md-12">
+      <h1 class="text-center">Placeholder Text</h1>
+      <p>Curabitur ullamcorper ultricies nisi. Nam pretium turpis et arcu. Suspendisse eu ligula. Curabitur blandit mollis lacus. Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi. Maecenas ullamcorper, dui et placerat feugiat, eros pede varius nisi, condimentum viverra felis nunc et lorem. Vestibulum ullamcorper mauris at ligula. Nam at tortor in tellus interdum sagittis. Vestibulum turpis sem, aliquet eget, lobortis pellentesque, rutrum eu, nisl. Praesent blandit laoreet nibh. Vivamus laoreet. Cras sagittis. Vivamus elementum semper nisi. Quisque malesuada placerat nisl. Pellentesque commodo eros a enim.</p>
+      <hr />
+
+    </div>
+      <div class="col-md-6">
+        <h3>Left Heading</h3>
+        <p>Curabitur ullamcorper ultricies nisi. Nam pretium turpis et arcu. Suspendisse eu ligula. Curabitur blandit mollis lacus. Enim suspendisse turpis, dictum sed, iaculis a, condimentum nec, nisi. Maecenas ullamcorper, dui et placerat feugiat, eros pede varius nisi, condimentum viverra felis nunc et lorem.</p>
+        <img class="img-responsive" src="http://placehold.it/180x100" />
+        <img class="img-responsive" src="http://placehold.it/180x100" />
+        <button class="btn btn-primary">Read More</button>
+    </div>
+    <div class="col-md-6">
+      <h3>Right Heading</h3>
+      <p>Vestibulum ullamcorper mauris at ligula. Nam at tortor in tellus interdum sagittis. Vestibulum turpis sem, aliquet eget, lobortis pellentesque, rutrum eu, nisl. Praesent blandit laoreet nibh sed vivamus laoreet. Cras sagittis. Vivamus elementum semper nisi. Quisque malesuada placerat nisl pellentesque commodo.</p>
+      <img class="img-responsive" src="http://placehold.it/180x100" />
+      <img class="img-responsive" src="http://placehold.it/180x100" />
+      <button class="btn btn-primary">Read More</button>
+  </div>
+    </div>
+  </div>
 {% endblock %}
